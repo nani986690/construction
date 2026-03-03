@@ -62,14 +62,14 @@ function initServices() {
             title: 'Standard Package',
             description: 'Our most popular choice, offering a perfect balance of quality materials and modern aesthetics.',
             image: 'https://uploads.onecompiler.io/42u9xvqj6/44f9bu7pt/luxury-villa.jpg',
-            features: ['Premium Cement Brands', 'Standard Steel Quality', 'Sudhakar Plumbing', 'Price on Request']
+            features: ['Prices will be negotiated upon discussion.', 'Premium Cement Brands', 'Standard Steel Quality', 'Sudhakar Plumbing', 'Price on Request']
         },
         {
             icon: 'castle',
             title: 'Premium Package',
             description: 'Luxury construction with high-end finishes, premium brands, and superior architectural design.',
             image: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop',
-            features: ['Legrand/Gold Medal Electrical', 'Birla Nu Plumbing', 'Custom Architecture', 'Price on Request']
+            features: ['Prices will be negotiated upon discussion.', 'Legrand/Gold Medal Electrical', 'Birla Nu Plumbing', 'Custom Architecture', 'Price on Request']
         }
     ];
 
@@ -117,21 +117,21 @@ function initFinishingServices() {
             icon: 'droplet',
             title: 'Painting & Finishes',
             description: 'Comprehensive painting services including specialized smoke design, royal play and aqua silk finishes.',
-            image: 'https://images.pexels.com/photos/159306/construction-site-build-construction-structure-159306.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop',
+            image: 'https://uploads.onecompiler.io/42u9xvqj6/44f9bu7pt/Painting-Contractors-FI-1.webp',
             features: ['Painting works', 'Smoke design', 'Royal play designs', 'Aqua silk paints', 'Price will be negotiated']
         },
         {
             icon: 'droplets',
             title: 'Plumbing Work',
             description: 'Complete house plumbing solutions including bathroom & kitchen pipeline installation, sanitary ware fitting, water tank installation, leak detection & repair.',
-            image: 'https://images.pexels.com/photos/584399/pexels-photo-584399.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop',
+            image: 'https://uploads.onecompiler.io/42u9xvqj6/44f9bu7pt/0602030005-01-Plumbers.jpg',
             features: ['Complete house plumbing solutions', 'Bathroom & kitchen pipeline', 'Sanitary ware fitting', 'CPVC/UPVC/PVC piping', 'Price will be negotiated']
         },
         {
             icon: 'zap',
             title: 'Electrical Wiring & Lighting',
             description: 'Complete electrical wiring solutions with concealed & open systems, fire-resistant cables, modular switches, and energy-efficient LED lighting.',
-            image: 'https://images.pexels.com/photos/159306/construction-site-build-construction-structure-159306.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop',
+            image: 'https://uploads.onecompiler.io/42u9xvqj6/44f9bu7pt/switchboards-electrician.jpg',
             features: ['Concealed & open wiring systems', 'FRLS fire-resistant cables', 'Modular switches & fittings', 'LED energy-efficient lighting', 'Price will be negotiated']
         }
     ];
@@ -191,7 +191,7 @@ function initPortfolio() {
             title: 'Vizag Heights',
             category: 'residential',
             location: 'Visakhapatnam',
-            image: 'https://images.pexels.com/photos/584399/pexels-photo-584399.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+            image: 'https://uploads.onecompiler.io/42u9xvqj6/44f9bu7pt/Lifespace-Villas-Kochi-Banner-2-scaled.jpg',
             description: 'Luxury apartments featuring premium brands like Vizag Steel and Ramco Cement.',
             likes: 95,
             views: 640
