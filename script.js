@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
     initHeader();
     initServices();
+    initFinishingServices();
     initPortfolio();
     initContact();
     initFooter();
@@ -55,45 +56,24 @@ function initHeader() {
 function initServices() {
     const servicesGrid = document.getElementById('services-grid');
     
-    const services = [
-        {
-            icon: 'home',
-            title: 'Basic Package',
-            description: 'Essential construction services for budget-friendly homes without compromising structural integrity.',
-            image: 'https://images.pexels.com/photos/159306/construction-site-build-construction-structure-159306.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop',
-            features: ['1700/- per sft', 'Ramco/Nagarjuna Cement', 'Vizag/Mangalam Steel', 'Red Brick Construction']
-        },
+    const mainServices = [
         {
             icon: 'building-2',
             title: 'Standard Package',
             description: 'Our most popular choice, offering a perfect balance of quality materials and modern aesthetics.',
-            image: 'https://images.pexels.com/photos/584399/pexels-photo-584399.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop',
-            features: ['2000/- per sft', 'Premium Cement Brands', 'Standard Steel Quality', 'Sudhakar Plumbing']
+            image: 'https://uploads.onecompiler.io/42u9xvqj6/44f9bu7pt/luxury-villa.jpg',
+            features: ['Premium Cement Brands', 'Standard Steel Quality', 'Sudhakar Plumbing', 'Price on Request']
         },
         {
             icon: 'castle',
             title: 'Premium Package',
             description: 'Luxury construction with high-end finishes, premium brands, and superior architectural design.',
             image: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop',
-            features: ['2500/- per sft', 'Legrand/Gold Medal Electrical', 'Birla Nu Plumbing', 'Custom Architecture']
-        },
-        {
-            icon: 'droplet',
-            title: 'Painting & Finishes',
-            description: 'Comprehensive painting services including specialized smoke design, royal play and aqua silk finishes.',
-            image: 'https://images.pexels.com/photos/159306/construction-site-build-construction-structure-159306.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop',
-            features: ['Painting works', 'Smoke design', 'Royal play designs', 'Aqua silk paints', 'All types of paints']
-        },
-        {
-            icon: 'tool',
-            title: 'Plumbing & Electrical',
-            description: 'All types of plumbing, electrical, interior, remodeling, demonstration and reconstruction works.',
-            image: 'https://images.pexels.com/photos/584399/pexels-photo-584399.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop',
-            features: ['Plumbing', 'Electrical', 'Interior work', 'Remodeling works', 'Demonstration and reconstruction']
+            features: ['Legrand/Gold Medal Electrical', 'Birla Nu Plumbing', 'Custom Architecture', 'Price on Request']
         }
     ];
 
-    services.forEach((service, index) => {
+    mainServices.forEach((service, index) => {
         const serviceCard = document.createElement('div');
         serviceCard.className = 'service-card';
         serviceCard.style.animationDelay = `${index * 100}ms`;
@@ -117,11 +97,74 @@ function initServices() {
                         </div>
                     `).join('')}
                 </div>
-                <button class="service-button">Learn More</button>
+                <button class="service-button btn btn-primary">Know More</button>
             </div>
         `;
         
         servicesGrid.appendChild(serviceCard);
+    });
+    
+    lucide.createIcons();
+}
+
+// Additional Services functionality
+function initFinishingServices() {
+    const finishingServicesGrid = document.getElementById('finishing-services-grid');
+    if (!finishingServicesGrid) return;
+    
+    const finishingServices = [
+        {
+            icon: 'droplet',
+            title: 'Painting & Finishes',
+            description: 'Comprehensive painting services including specialized smoke design, royal play and aqua silk finishes.',
+            image: 'https://images.pexels.com/photos/159306/construction-site-build-construction-structure-159306.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop',
+            features: ['Painting works', 'Smoke design', 'Royal play designs', 'Aqua silk paints', 'Price will be negotiated']
+        },
+        {
+            icon: 'droplets',
+            title: 'Plumbing Work',
+            description: 'Complete house plumbing solutions including bathroom & kitchen pipeline installation, sanitary ware fitting, water tank installation, leak detection & repair.',
+            image: 'https://images.pexels.com/photos/584399/pexels-photo-584399.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop',
+            features: ['Complete house plumbing solutions', 'Bathroom & kitchen pipeline', 'Sanitary ware fitting', 'CPVC/UPVC/PVC piping', 'Price will be negotiated']
+        },
+        {
+            icon: 'zap',
+            title: 'Electrical Wiring & Lighting',
+            description: 'Complete electrical wiring solutions with concealed & open systems, fire-resistant cables, modular switches, and energy-efficient LED lighting.',
+            image: 'https://images.pexels.com/photos/159306/construction-site-build-construction-structure-159306.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop',
+            features: ['Concealed & open wiring systems', 'FRLS fire-resistant cables', 'Modular switches & fittings', 'LED energy-efficient lighting', 'Price will be negotiated']
+        }
+    ];
+
+    finishingServices.forEach((service, index) => {
+        const serviceCard = document.createElement('div');
+        serviceCard.className = 'service-card';
+        serviceCard.style.animationDelay = `${index * 100}ms`;
+        
+        serviceCard.innerHTML = `
+            <div class="service-image-container">
+                <img src="${service.image}" alt="${service.title}" class="service-image">
+                <div class="service-overlay"></div>
+                <div class="service-icon">
+                    <i data-lucide="${service.icon}"></i>
+                </div>
+            </div>
+            <div class="service-content">
+                <h3 class="service-title">${service.title}</h3>
+                <p class="service-description">${service.description}</p>
+                <div class="service-features">
+                    ${service.features.map(feature => `
+                        <div class="service-feature">
+                            <div class="service-feature-dot"></div>
+                            <span class="service-feature-text">${feature}</span>
+                        </div>
+                    `).join('')}
+                </div>
+                <button class="service-button btn btn-primary">Know More</button>
+            </div>
+        `;
+        
+        finishingServicesGrid.appendChild(serviceCard);
     });
     
     lucide.createIcons();
@@ -138,8 +181,8 @@ function initPortfolio() {
             title: 'Gajuwaka Residency',
             category: 'residential',
             location: 'Gajuwaka',
-            image: 'https://images.pexels.com/photos/159306/construction-site-build-construction-structure-159306.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
-            description: 'A modern residential project completed with the highest quality materials and structural integrity.',
+            image: 'https://uploads.onecompiler.io/42u9xvqj6/44f9bu7pt/WhatsApp%20Image%202026-03-03%20at%2012.42.15.jpeg',
+            description: 'Crafted with superior materials and engineered for lasting structural strength, this modern residential project offers quality living in a prime location.Malabar Gold Back Side, Beside Sri Kanya Theatre, Gajuwaka, Visakhapatnam',
             likes: 120,
             views: 850
         },
@@ -255,8 +298,8 @@ function initContact() {
         {
             icon: 'map-pin',
             title: 'Visit Us',
-            details: 'Gajuwaka, Visakhapatnam',
-            subtext: 'Design & Construction Office'
+            details: 'Malabar Gold Back Side, Beside Sri Kanya Theatre',
+            subtext: 'Gajuwaka, Visakhapatnam'
         },
         {
             icon: 'clock',
@@ -336,7 +379,7 @@ function initFooter() {
     const contactDetails = [
         {
             icon: 'map-pin',
-            main: 'Corner Stone Office',
+            main: 'Malabar Gold Back Side, Beside Sri Kanya Theatre',
             sub: 'Gajuwaka, Visakhapatnam, India'
         },
         {
