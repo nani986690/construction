@@ -605,6 +605,18 @@ iframe {
     background: linear-gradient(to right, #ea580c, #b91c1c);
 }
 
+/* Finishing Services Styles */
+.finishing {
+    padding: 5rem 0;
+    background: white;
+}
+
+.finishing-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
 /* Portfolio Styles */
 .portfolio {
     padding: 5rem 0;
@@ -1428,6 +1440,7 @@ iframe {
     }
 
     .services-grid,
+    .finishing-services-grid,
     .portfolio-grid {
         grid-template-columns: 1fr;
     }
@@ -1629,6 +1642,7 @@ iframe {
     }
     
     .services-grid,
+    .finishing-services-grid,
     .portfolio-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
