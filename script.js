@@ -12,6 +12,14 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScrolling();
 });
 
+// WhatsApp messaging function
+function sendWhatsAppMessage(serviceTitle = '') {
+    const whatsappNumber = '919581026463';
+    const message = serviceTitle ? `Hi! I'm interested in your ${serviceTitle} service. Please provide more details.` : `Hi! I want to know more about your services.`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+}
+
 // Header functionality
 function initHeader() {
     const header = document.getElementById('header');
@@ -56,20 +64,83 @@ function initHeader() {
 function initServices() {
     const servicesGrid = document.getElementById('services-grid');
     
+    // Main service categories with new offerings and contact numbers
     const mainServices = [
         {
-            icon: 'building-2',
-            title: 'Standard Package',
-            description: 'Our most popular choice, offering a perfect balance of quality materials and modern aesthetics.',
-            image: 'https://uploads.onecompiler.io/42u9xvqj6/44f9bu7pt/luxury-villa.jpg',
-            features: ['Prices will be negotiated upon discussion.', 'Premium Cement Brands', 'Standard Steel Quality', 'Sudhakar Plumbing', 'Price on Request']
+            icon: 'hard-hat',
+            title: 'Building & Civil Works',
+            description: 'All kinds of construction and structural services.',
+            image: 'https://uploads.onecompiler.io/42u9xvqj6/44eyfwg5r/hero.webp',
+            features: [
+                'Residential Building Construction',
+                'Commercial Building Construction',
+                'Structural Works',
+                'Foundation Works',
+                'Concrete & Masonry Works',
+                'Price will be negotiated'
+            ],
+            contactPrimary: '9581026463',
+            contactSecondary: '7893209610'
         },
         {
-            icon: 'castle',
-            title: 'Premium Package',
-            description: 'Luxury construction with high-end finishes, premium brands, and superior architectural design.',
-            image: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop',
-            features: ['Prices will be negotiated upon discussion.', 'Legrand/Gold Medal Electrical', 'Birla Nu Plumbing', 'Custom Architecture', 'Price on Request']
+            icon: 'home',
+            title: 'Interior Design & Planning',
+            description: 'Creative and functional interior solutions.',
+            image: 'https://uploads.onecompiler.io/42u9xvqj6/44ffkbmag/images%20(4).jpg',
+            features: [
+                'Space Planning',
+                'Interior Design Concepts',
+                'False Ceiling & Wall Designs',
+                'Modular Furniture Planning',
+                'Price will be negotiated'
+            ],
+            contactPrimary: '9581026463',
+            contactSecondary: '7893209610'
+        },
+        {
+            icon: 'tool',
+            title: 'Renovation & Remodeling',
+            description: 'Upgrade and refresh your existing spaces.',
+            image: 'https://uploads.onecompiler.io/42u9xvqj6/44ffkbmag/13-Nov-24-Renovation-vs-remodeling1.webp',
+            features: [
+                'Home Renovation',
+                'Building Remodeling',
+                'Structural Repairs',
+                'Interior Upgrades',
+                'Price will be negotiated'
+            ],
+            contactPrimary: '9581026463',
+            contactSecondary: '7893209610'
+        },
+        {
+            icon: 'road',
+            title: 'Infrastructure Works',
+            description: 'Developing essential civil infrastructure.',
+            image: 'https://uploads.onecompiler.io/42u9xvqj6/44ffkbmag/1754904793579.png',
+            features: [
+                'Roads & Drainage',
+                'Compound Walls',
+                'Site Development',
+                'Utility Installations',
+                'Price will be negotiated'
+            ],
+            contactPrimary: '9581026463',
+            contactSecondary: '7893209610'
+        },
+        {
+            icon: 'clipboard',
+            title: 'Project Management',
+            description: 'End‑to‑end planning and supervision.',
+            image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg',
+            features: [
+                'Construction Planning',
+                'Site Supervision',
+                'Cost Estimation',
+                'Quality Control',
+                'price will be negotiated'
+            ],
+            contactPrimary: '9581026463',
+            contactSecondary: '7893209610'
         }
     ];
 
@@ -97,7 +168,12 @@ function initServices() {
                         </div>
                     `).join('')}
                 </div>
-                <button class="service-button btn btn-primary">Know More</button>
+                ${service.contactPrimary || service.contactSecondary ? `
+                <div class="service-contact">
+                    <strong>Contact:</strong> ${service.contactPrimary ? service.contactPrimary : ''}${service.contactSecondary ? ' / ' + service.contactSecondary : ''}
+                </div>
+                ` : ''}
+                <button class="service-button btn btn-primary" onclick="sendWhatsAppMessage('${service.title}')">Know More</button>
             </div>
         `;
         
@@ -160,7 +236,7 @@ function initFinishingServices() {
                         </div>
                     `).join('')}
                 </div>
-                <button class="service-button btn btn-primary">Know More</button>
+                <button class="service-button btn btn-primary" onclick="sendWhatsAppMessage('${service.title}')">Know More</button>
             </div>
         `;
         
@@ -188,11 +264,11 @@ function initPortfolio() {
         },
         {
             id: 2,
-            title: 'Vizag Heights',
+            title: 'Luxury apartment',
             category: 'residential',
             location: 'Visakhapatnam',
-            image: 'https://uploads.onecompiler.io/42u9xvqj6/44f9bu7pt/Lifespace-Villas-Kochi-Banner-2-scaled.jpg',
-            description: 'Luxury apartments featuring premium brands like Vizag Steel and Ramco Cement.',
+            image: 'https://uploads.onecompiler.io/42u9xvqj6/44fc9f7hf/WhatsApp%20Image%202026-03-03%20at%2022.45.32.jpeg',
+            description: 'Luxury apartments featuring premium brands like Vizag Steel and Ramco Cement.Dath sai Nagar Mangalam Duvvada Kurmanpallem, Visakhapatnam',
             likes: 95,
             views: 640
         },
@@ -286,13 +362,13 @@ function initContact() {
         {
             icon: 'phone',
             title: 'Call Us',
-            details: '+91 98765 43210',
+            details: 'Primary: 9581026463 | Secondary: 7893209610',
             subtext: 'Mon-Sat 9AM-7PM'
         },
         {
             icon: 'mail',
             title: 'Email Us',
-            details: 'hello@cornerstoneinfratech.com',
+            details: 'cornerstoneit1794@gmail.com',
             subtext: 'We reply within 24 hours'
         },
         {
@@ -384,12 +460,12 @@ function initFooter() {
         },
         {
             icon: 'phone',
-            main: '+91 98765 43210',
+            main: '+91 9581026463',
             sub: 'Mon-Sat 9AM-7PM'
         },
         {
             icon: 'mail',
-            main: 'hello@cornerstoneinfratech.com',
+            main: 'cornerstoneit1794@gmail.com',
             sub: 'We reply within 24 hours'
         }
     ];
