@@ -230,9 +230,9 @@ iframe {
 }
 
 .nav-logo {
-    width: 2.5rem;
-    height: 2.5rem;
-    background: linear-gradient(135deg, #f97316, #dc2626);
+    width: 130px;
+    height: 80px;
+   
     border-radius: 0.5rem;
     display: flex;
     align-items: center;
@@ -582,6 +582,15 @@ iframe {
     color: #6b7280;
 }
 
+.service-contact {
+    font-size: 0.9rem;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.service-contact strong {
+    color: #f97316;
+}
 .service-button {
     width: 100%;
     background: linear-gradient(to right, #f97316, #dc2626);
@@ -1077,6 +1086,53 @@ iframe {
     box-sizing: border-box;
 }
 
+.whatsapp-divider {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    gap: 1rem;
+    text-align: center;
+    color: #9ca3af;
+    font-weight: 500;
+}
+
+.whatsapp-divider::before,
+.whatsapp-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+    background: linear-gradient(135deg, #20ba5a, #0e7e74);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.btn-whatsapp svg {
+    width: 20px;
+    height: 20px;
+}
+
 .contact-info {
     display: flex;
     flex-direction: column;
@@ -1481,10 +1537,7 @@ iframe {
         gap: 0.25rem;
     }
     
-    .nav-logo {
-        width: 2rem;
-        height: 2rem;
-    }
+   
     
     .nav-title {
         font-size: 1rem;
